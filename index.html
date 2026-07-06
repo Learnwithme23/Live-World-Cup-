@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +23,16 @@
             position: relative;
         }
         .logo {
-            font-size: 4.2rem;
+            font-size: 4.5rem;
             font-weight: 900;
             background: linear-gradient(90deg, #00ff88, #00ccff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
         }
         .subtitle {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             margin-bottom: 25px;
             color: #00ffcc;
         }
@@ -39,19 +40,23 @@
             display: inline-block;
             background: #ff0000;
             color: white;
-            padding: 8px 25px;
+            padding: 10px 30px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             animation: pulse 2s infinite;
             margin-bottom: 20px;
         }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); } 70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); } }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+        }
         
         .watch-btn {
-            margin-top: 30px;
-            padding: 18px 60px;
-            font-size: 1.5rem;
+            margin: 20px 10px;
+            padding: 18px 55px;
+            font-size: 1.6rem;
             font-weight: bold;
             background: linear-gradient(45deg, #00ff88, #00ccff);
             color: #000;
@@ -61,10 +66,13 @@
             transition: all 0.3s;
             box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
         }
-        .watch-btn:hover { transform: scale(1.08); }
+        .watch-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.6);
+        }
 
         .features {
-            padding: 60px 20px;
+            padding: 70px 20px;
             background: #111;
             text-align: center;
         }
@@ -95,7 +103,12 @@
             margin: 30px auto;
             max-width: 800px;
         }
-        footer { text-align: center; padding: 30px; background: #000; font-size: 0.9rem; }
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            background: #000; 
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
@@ -103,43 +116,47 @@
     <div class="hero">
         <div>
             <div class="live-badge">
-                <i class="fas fa-circle"></i> LIVE ALL MATCHES
+                <i class="fas fa-circle"></i> LIVE NOW
             </div>
             <h1 class="logo">FIFA WORLD CUP 2026</h1>
-            <p class="subtitle">সব ম্যাচ লাইভ স্ট্রিমিং</p>
+            <p class="subtitle">Watch All Matches Live</p>
             
             <div class="match-info">
-                <h2>🏆 বিশ্বকাপ ২০২৬ - লাইভ</h2>
-                <p style="font-size:1.3rem; margin:15px 0;">প্রতিদিনের সব ম্যাচ উপভোগ করুন</p>
-                <p><strong>HD Quality • Multi Device Support</strong></p>
+                <h2>🏆 FIFA World Cup 2026 - Live Streaming</h2>
+                <p style="font-size:1.3rem; margin:15px 0;">Every Match • All Stages • Real-Time</p>
+                <p><strong>HD Quality • No Buffering • Multi-Device Support</strong></p>
             </div>
 
             <button class="watch-btn" onclick="watchLiveMain()">
-                <i class="fas fa-play"></i> সব ম্যাচ দেখুন
+                <i class="fas fa-play"></i> LIVE NOW
+            </button>
+            
+            <button class="watch-btn" onclick="watchLiveMain()" style="background: linear-gradient(45deg, #ff3366, #ff9900);">
+                <i class="fas fa-tv"></i> WATCH LIVE STREAM
             </button>
         </div>
     </div>
 
     <div class="features">
-        <h2 style="margin-bottom:40px; font-size:2.2rem;">কেন এখান থেকে দেখবেন?</h2>
+        <h2 style="margin-bottom:40px; font-size:2.3rem;">Why Watch Here?</h2>
         
         <div class="feature-grid">
             <!-- Feature 1 -->
             <div class="feature-card" onclick="window.open('https://www.effectivecpmnetwork.com/b8v183qy?key=ed737983d2ecc722a089eb78735f4f6b', '_blank')">
                 <h3>⚡ Ultra HD 4K</h3>
-                <p>কোনো ল্যাগ ছাড়াই স্পষ্ট ছবি</p>
+                <p>Crystal Clear Picture - No Lag</p>
             </div>
             
             <!-- Feature 2 -->
             <div class="feature-card" onclick="window.open('https://www.effectivecpmnetwork.com/hysnhwxzr?key=386490780c9f18f725d107f7a2888577', '_blank')">
-                <h3>📱 মোবাইল ফ্রেন্ডলি</h3>
-                <p>যেকোনো ডিভাইসে পারফেক্ট</p>
+                <h3>📱 Mobile Friendly</h3>
+                <p>Perfect on Any Device</p>
             </div>
             
             <!-- Feature 3 -->
             <div class="feature-card" onclick="window.open('https://www.effectivecpmnetwork.com/u3by06f8?key=6de6246dfc0ee8e2ca80dc2eab45843c', '_blank')">
-                <h3>🔒 সিকিউর ও ফাস্ট</h3>
-                <p>তাৎক্ষণিক লোডিং</p>
+                <h3>🔒 Secure & Fast</h3>
+                <p>Instant Loading</p>
             </div>
         </div>
     </div>
@@ -154,4 +171,4 @@
         }
     </script>
 </body>
-    </html>
+</html>
