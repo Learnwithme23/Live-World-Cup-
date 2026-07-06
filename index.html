@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIFA World Cup 2026™ - Live Stream</title>
+    <title>FIFA World Cup 2026™ - Live All Matches</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,7 +14,7 @@
             overflow-x: hidden;
         }
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)), url('https://source.unsplash.com/1600x900/?football-stadium-night') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -23,17 +23,16 @@
             position: relative;
         }
         .logo {
-            font-size: 4.5rem;
+            font-size: 4.2rem;
             font-weight: 900;
             background: linear-gradient(90deg, #00ff88, #00ccff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            margin-bottom: 15px;
         }
         .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
+            font-size: 1.7rem;
+            margin-bottom: 25px;
             color: #00ffcc;
         }
         .live-badge {
@@ -47,15 +46,12 @@
             animation: pulse 2s infinite;
             margin-bottom: 20px;
         }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); }
-            100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
-        }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); } 70% { box-shadow: 0 0 0 15px rgba(255,0,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); } }
+        
         .watch-btn {
-            margin-top: 40px;
+            margin-top: 30px;
             padding: 18px 60px;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: bold;
             background: linear-gradient(45deg, #00ff88, #00ccff);
             color: #000;
@@ -65,28 +61,41 @@
             transition: all 0.3s;
             box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
         }
-        .watch-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.6);
-        }
+        .watch-btn:hover { transform: scale(1.08); }
+
         .features {
             padding: 60px 20px;
             background: #111;
             text-align: center;
         }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px 20px;
+            border-radius: 15px;
+            width: 320px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 255, 136, 0.1);
+        }
         .match-info {
             background: rgba(255,255,255,0.05);
             padding: 25px;
             border-radius: 15px;
-            margin: 20px auto;
-            max-width: 700px;
+            margin: 30px auto;
+            max-width: 800px;
         }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #000;
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; padding: 30px; background: #000; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -94,37 +103,41 @@
     <div class="hero">
         <div>
             <div class="live-badge">
-                <i class="fas fa-circle"></i> LIVE NOW - FINAL STAGE
+                <i class="fas fa-circle"></i> LIVE ALL MATCHES
             </div>
             <h1 class="logo">FIFA WORLD CUP 2026</h1>
-            <p class="subtitle">ফাইনাল ম্যাচ লাইভ স্ট্রিমিং</p>
+            <p class="subtitle">সব ম্যাচ লাইভ স্ট্রিমিং</p>
             
             <div class="match-info">
-                <h2>🏆 ফাইনাল ম্যাচ</h2>
-                <p style="font-size:1.4rem; margin:15px 0;">আর্জেন্টিনা vs ফ্রান্স (প্রত্যাশিত)</p>
-                <p><strong>১৯ জুলাই ২০২৬ | স্টেডিয়াম: মেটলাইফ স্টেডিয়াম, USA</strong></p>
+                <h2>🏆 বিশ্বকাপ ২০২৬ - লাইভ</h2>
+                <p style="font-size:1.3rem; margin:15px 0;">প্রতিদিনের সব ম্যাচ উপভোগ করুন</p>
+                <p><strong>HD Quality • Multi Device Support</strong></p>
             </div>
 
-            <button class="watch-btn" onclick="watchLive()">
-                <i class="fas fa-play"></i> এখনই লাইভ দেখুন
+            <button class="watch-btn" onclick="watchLiveMain()">
+                <i class="fas fa-play"></i> সব ম্যাচ দেখুন
             </button>
-
-            <p style="margin-top: 30px; opacity: 0.8;">HD Quality • No Buffering • Multi Language Commentary</p>
         </div>
     </div>
 
     <div class="features">
         <h2 style="margin-bottom:40px; font-size:2.2rem;">কেন এখান থেকে দেখবেন?</h2>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1100px; margin:auto;">
-            <div style="background:rgba(255,255,255,0.05); padding:25px; border-radius:15px; width:280px;">
+        
+        <div class="feature-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card" onclick="window.open('https://www.effectivecpmnetwork.com/b8v183qy?key=ed737983d2ecc722a089eb78735f4f6b', '_blank')">
                 <h3>⚡ Ultra HD 4K</h3>
                 <p>কোনো ল্যাগ ছাড়াই স্পষ্ট ছবি</p>
             </div>
-            <div style="background:rgba(255,255,255,0.05); padding:25px; border-radius:15px; width:280px;">
+            
+            <!-- Feature 2 -->
+            <div class="feature-card" onclick="window.open('https://www.effectivecpmnetwork.com/hysnhwxzr?key=386490780c9f18f725d107f7a2888577', '_blank')">
                 <h3>📱 মোবাইল ফ্রেন্ডলি</h3>
                 <p>যেকোনো ডিভাইসে পারফেক্ট</p>
             </div>
-            <div style="background:rgba(255,255,255,0.05); padding:25px; border-radius:15px; width:280px;">
+            
+            <!-- Feature 3 -->
+            <div class="feature-card" onclick="window.open('https://www.effectivecpmnetwork.com/u3by06f8?key=6de6246dfc0ee8e2ca80dc2eab45843c', '_blank')">
                 <h3>🔒 সিকিউর ও ফাস্ট</h3>
                 <p>তাৎক্ষণিক লোডিং</p>
             </div>
@@ -132,17 +145,12 @@
     </div>
 
     <footer>
-        &copy; 2026 FIFA World Cup Official Broadcast Partner • All Rights Reserved
+        © 2026 FIFA World Cup Official Broadcast Partner • All Rights Reserved
     </footer>
 
     <script>
-        function watchLive() {
-            // প্রথম লিংক
+        function watchLiveMain() {
             window.open('https://www.effectivecpmnetwork.com/qvung0nd75?key=ccee145104792286e9dbeb100acc0bd6', '_blank');
-            // কয়েক সেকেন্ড পর দ্বিতীয় লিংক (অপশনাল)
-            setTimeout(() => {
-                window.open('https://www.effectivecpmnetwork.com/u3by06f8?key=6de6246dfc0ee8e2ca80dc2eab45843c', '_blank');
-            }, 1500);
         }
     </script>
 </body>
